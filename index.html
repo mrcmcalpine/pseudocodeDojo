@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudocode Dojo | 0478 Paper 2 MVP</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body class="theme-bit">
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Cambridge IGCSE 0478 Paper 2</p>
+        <h1>Pseudocode Dojo</h1>
+        <p class="tagline">Train declarations. Master arrays. Level up from Bit to Exbibyte.</p>
+      </div>
+      <button id="teacherToggleBtn" class="ghost-button" type="button" aria-expanded="false">Teacher panel</button>
+    </header>
+
+    <main class="dashboard">
+      <section class="card level-card" aria-labelledby="levelHeading">
+        <h2 id="levelHeading">Current rank</h2>
+        <div class="level-row">
+          <span id="beltSwatch" class="belt-swatch" aria-hidden="true"></span>
+          <div>
+            <p id="currentLevel" class="level-name">Bit</p>
+            <p id="beltLabel" class="muted">White belt</p>
+          </div>
+        </div>
+        <div class="xp-row">
+          <strong id="xpDisplay">0 XP</strong>
+          <span id="nextLevelText">Next: Nibble at 60 XP</span>
+        </div>
+        <div class="progress-track" aria-label="Progress to next level">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="levelMessage" class="level-message" aria-live="polite">Begin your first declaration drill.</p>
+      </section>
+
+      <section class="card quiz-card" aria-labelledby="questionHeading">
+        <div class="quiz-topline">
+          <div>
+            <p id="modeLabel" class="mode-label">Standard training</p>
+            <h2 id="questionHeading">Question</h2>
+          </div>
+          <span id="difficultyPill" class="difficulty-pill">Easy</span>
+        </div>
+
+        <p id="questionTopic" class="topic-label">Topic</p>
+        <div id="questionText" class="question-text"></div>
+        <form id="answerForm" autocomplete="off">
+          <div id="answerArea" class="answer-area"></div>
+          <div class="button-row">
+            <button id="submitBtn" class="primary-button" type="submit">Check answer</button>
+            <button id="nextBtn" class="secondary-button" type="button">Next question</button>
+            <button id="revisionBtn" class="secondary-button" type="button">Revision mode</button>
+          </div>
+        </form>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+      </section>
+
+      <aside class="card stats-card" aria-labelledby="statsHeading">
+        <h2 id="statsHeading">Training stats</h2>
+        <dl class="stats-grid">
+          <div><dt>Correct</dt><dd id="correctCount">0</dd></div>
+          <div><dt>Wrong</dt><dd id="wrongCount">0</dd></div>
+          <div><dt>Mastery</dt><dd id="masteryPercent">0%</dd></div>
+          <div><dt>Approved activities</dt><dd id="activityCountDisplay">0</dd></div>
+        </dl>
+        <h3>Badges</h3>
+        <ul id="badgeList" class="badge-list">
+          <li>White Belt Starter</li>
+        </ul>
+      </aside>
+
+      <section id="teacherPanel" class="card teacher-panel hidden" aria-labelledby="teacherHeading">
+        <h2 id="teacherHeading">Teacher unlock panel</h2>
+        <p class="muted">Demo-only approval tools for the three locked ranks.</p>
+        <label for="teacherPassword">Teacher password</label>
+        <input id="teacherPassword" type="password" placeholder="Enter teacher password" />
+
+        <label for="approvedActivities">Approved activity count</label>
+        <input id="approvedActivities" type="number" min="0" max="20" value="0" />
+
+        <button id="unlockBtn" class="primary-button" type="button">Check and unlock eligible levels</button>
+        <div id="unlockFeedback" class="feedback compact" aria-live="polite"></div>
+
+        <h3>Locked level eligibility</h3>
+        <ul id="lockStatusList" class="lock-status-list"></ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
